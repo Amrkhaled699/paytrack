@@ -1,0 +1,61 @@
+{
+  "revision": 1789360681823,
+  "updatedAt": "2026-09-14T04:38:01.823Z",
+  "accounts": [
+    {
+      "username": "owner",
+      "passwordHash": "pbkdf2$600000$c1070cd3c7a0560a24e0cdc36465e726$7b4e5a0fb6287b1a63c9671801c09fba27f4d7d0aa319524b263afd7a2e265a3",
+      "role": "owner",
+      "companyId": null,
+      "displayName": "Amr & Mohamed Khaled",
+      "createdAt": 1789360681674,
+      "createdBy": "development-only"
+    },
+    {
+      "username": "admin",
+      "passwordHash": "pbkdf2$600000$1e1cc77b9e4eeea3593477df38407f0f$82c4e4c05d8101e8cbda17f16457d1cd645122c3228e962299dd3ae3a8513206",
+      "role": "admin",
+      "companyId": "co_c96fda8b0bd847e6",
+      "companyName": "Main Company",
+      "createdAt": 1789360681823,
+      "createdBy": "system"
+    }
+  ],
+  "tables": [],
+  "activeTableId": "",
+  "employees": [],
+  "schemaVersion": 4,
+  "companies": [
+    {
+      "id": "co_c96fda8b0bd847e6",
+      "name": "Main Company",
+      "status": "active",
+      "plan": "Standard",
+      "createdAt": 1789360681674,
+      "requestId": "legacy-migration",
+      "tables": [],
+      "activeTableId": "",
+      "employees": [],
+      "settings": {
+        "currency": "$",
+        "taxRate": 0.2,
+        "timezone": "Africa/Cairo",
+        "language": "en",
+        "brandColor": "#2563eb"
+      },
+      "subscription": {
+        "status": "trial",
+        "plan": "Standard",
+        "employeeLimit": 50,
+        "trialEndsAt": 1790570281674,
+        "renewalAt": null,
+        "paymentStatus": "unpaid"
+      }
+    }
+  ],
+  "companyRequests": [],
+  "contactMessages": [],
+  "supportTickets": [],
+  "invoices": [],
+  "auditLog": []
+}

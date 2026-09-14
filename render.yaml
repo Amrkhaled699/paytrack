@@ -1,0 +1,40 @@
+services:
+  - type: web
+    name: paytrack-online
+    runtime: node
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    healthCheckPath: "/api/health"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PAYTRACK_DATA_DIR
+        value: /var/data
+      - key: PAYTRACK_AI_API_KEY
+        sync: false
+      - key: PAYTRACK_AI_MODEL
+        value: gpt-5.6-sol
+      - key: PAYTRACK_AI_API_URL
+        value: https://api.openai.com/v1/responses
+      - key: PAYTRACK_ORIGIN
+        sync: false
+      - key: PAYTRACK_OWNER_1_USERNAME
+        value: amr
+      - key: PAYTRACK_OWNER_1_PASSWORD
+        sync: false
+      - key: PAYTRACK_OWNER_1_DISPLAY_NAME
+        value: Amr
+      - key: PAYTRACK_OWNER_1_TOTP_SECRET
+        sync: false
+      - key: PAYTRACK_OWNER_2_USERNAME
+        value: mohamed.khaled
+      - key: PAYTRACK_OWNER_2_PASSWORD
+        sync: false
+      - key: PAYTRACK_OWNER_2_DISPLAY_NAME
+        value: Mohamed Khaled
+      - key: PAYTRACK_OWNER_2_TOTP_SECRET
+        sync: false
+    disk:
+      name: paytrack-data
+      mountPath: /var/data
+      sizeGB: 1

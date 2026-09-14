@@ -1,0 +1,9 @@
+{
+  "name": "paytrack-online",
+  "version": "4.3.0",
+  "private": true,
+  "description": "PayTrack multi-company payroll and attendance platform",
+  "main": "server.js",
+  "scripts": {"start": "node server.js"},
+  "engines": {"node": ">=18"}
+}
