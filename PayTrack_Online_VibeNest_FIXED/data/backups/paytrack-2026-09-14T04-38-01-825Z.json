@@ -1,16 +1,15 @@
 {
-  "revision": 1789568626387,
-  "updatedAt": "2026-09-16T14:23:46.387Z",
+  "revision": 1789360681823,
+  "updatedAt": "2026-09-14T04:38:01.823Z",
   "accounts": [
     {
       "username": "owner",
       "passwordHash": "pbkdf2$600000$c1070cd3c7a0560a24e0cdc36465e726$7b4e5a0fb6287b1a63c9671801c09fba27f4d7d0aa319524b263afd7a2e265a3",
-      "role": "disabled",
+      "role": "owner",
       "companyId": null,
       "displayName": "Amr & Mohamed Khaled",
       "createdAt": 1789360681674,
-      "createdBy": "development-only",
-      "disabledAt": 1789568626145
+      "createdBy": "development-only"
     },
     {
       "username": "admin",
@@ -20,24 +19,6 @@
       "companyName": "Main Company",
       "createdAt": 1789360681823,
       "createdBy": "system"
-    },
-    {
-      "username": "amr",
-      "passwordHash": "pbkdf2$600000$e19cbe846f26b15c2e10ad1825fc5759$ba9df4eb808d417d9566f99d283a3eb0534bf7254c26b443ada46982393e39f6",
-      "role": "owner",
-      "companyId": null,
-      "displayName": "Amr",
-      "createdAt": 1789568626270,
-      "createdBy": "environment"
-    },
-    {
-      "username": "mohamed.khaled",
-      "passwordHash": "pbkdf2$600000$fa4a3b771aa33d8405df1176fda18a48$2a283da77334c62063e3e96e45cc2fbd428ca05e5a620690c1d8938c5556fd03",
-      "role": "owner",
-      "companyId": null,
-      "displayName": "Mohamed Khaled",
-      "createdAt": 1789568626387,
-      "createdBy": "environment"
     }
   ],
   "tables": [],
