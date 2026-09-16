@@ -42,17 +42,16 @@ function findAccount(db,u){const n=cleanUsername(u);return (db.accounts||[]).fin
 function getCompany(db,companyId){return (db.companies||[]).find(c=>c.id===companyId);}
 function newCompany(name,requestId,plan='Standard'){return {id:id('co'),name:String(name||'Company').trim().slice(0,120)||'Company',status:'active',plan:String(plan||'Standard').slice(0,40),createdAt:Date.now(),requestId:requestId||null,tables:[],activeTableId:'',employees:[],settings:{currency:'$',taxRate:0.2,timezone:'Africa/Cairo',language:'en',brandColor:'#2563eb'},subscription:{status:'trial',plan:String(plan||'Standard'),employeeLimit:plan==='Enterprise'?1000:plan==='Professional'?250:50,trialEndsAt:Date.now()+14*86400000,renewalAt:null,paymentStatus:'unpaid'}};}
 function ownerEnvAccounts(){
-  const list=[];
-  for(let i=1;i<=2;i++){
-    const username=cleanUsername(process.env[`PAYTRACK_OWNER_${i}_USERNAME`]||'');
-    const password=process.env[`PAYTRACK_OWNER_${i}_PASSWORD`]||'';
-    const displayName=String(process.env[`PAYTRACK_OWNER_${i}_DISPLAY_NAME`]||(i===1?'Amr':'Mohamed Khaled')).trim();
-    if(username||password){
-      if(!validateUsername(username)||!validatePassword(password))throw new Error(`PAYTRACK_OWNER_${i}_USERNAME/PASSWORD is invalid. Owner passwords must be at least 15 characters.`);
-      list.push({username,password,displayName});
-    }
-  }
-  return list;
+  // Owner usernames/display names are non-secret application configuration.
+  // VibeNest only needs the four secret variables: two passwords and two TOTP secrets.
+  const owners=[
+    {username:'amr',displayName:'Amr',password:process.env.PAYTRACK_OWNER_1_PASSWORD||''},
+    {username:'mohamed.khaled',displayName:'Mohamed Khaled',password:process.env.PAYTRACK_OWNER_2_PASSWORD||''}
+  ];
+  owners.forEach((o,i)=>{
+    if(!validateUsername(o.username)||!validatePassword(o.password))throw new Error(`Owner ${i+1} password is missing or invalid. Owner passwords must be at least 15 characters.`);
+  });
+  return owners;
 }
 function ensureOwnerAndMigrate(db){
   let changed=false;
